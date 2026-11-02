@@ -6,7 +6,43 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Bootstrap.unity
+    guid: 3ebe73a2f1f5de348ad207c2e0f546fc
+  - enabled: 1
+    path: Assets/Scenes/Base.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Beach.unity
+    guid: dca022dbf44d99c46bcd1f18090f0ccd
+  - enabled: 1
+    path: Assets/Scenes/Connector.unity
+    guid: 06014c0174b4a2a488995f8277479dda
+  - enabled: 1
+    path: Assets/Scenes/Factory.unity
+    guid: 2fa8c88434992e942868b7bee0618eea
+  - enabled: 1
+    path: Assets/Scenes/Farm 1.unity
+    guid: ced0f200586fa1643a9c96ab7adfcf8a
+  - enabled: 1
+    path: Assets/Scenes/Farm 2.unity
+    guid: 1e4dba3798ae6394e854e9ffabcc8ce0
+  - enabled: 1
+    path: Assets/Scenes/Farm 3.unity
+    guid: b67e66a68a2e321449cb2f4d23041c92
+  - enabled: 1
+    path: Assets/Scenes/Limestone.unity
+    guid: 9d68c21e832f2554a940a22450ce1f5a
+  - enabled: 1
+    path: Assets/Scenes/To Limestone.unity
+    guid: 48e5209fdc1590b418208afc7e6aa7a6
+  - enabled: 1
+    path: Assets/Scenes/To Mine.unity
+    guid: f7d119029340f8c4d8623797f1ec3a06
+  - enabled: 1
+    path: Assets/Scenes/Village 1.unity
+    guid: 09f5973d191bff44d89473b638bb8fc0
+  - enabled: 1
+    path: Assets/Scenes/Village 2.unity
+    guid: 7f4ea3097a0c37a48a4faa9ce59f2c75
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

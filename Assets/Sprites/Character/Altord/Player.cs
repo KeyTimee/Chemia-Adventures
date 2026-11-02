@@ -4,8 +4,14 @@ public class Player : MonoBehaviour
 {
     public Inventory inventory;
 
-    private void Awake()
+    private void Start()
     {
-        inventory = new Inventory(21);
+        if (InventoryManager.Instance == null)
+        {
+            Debug.LogError("InventoryManager belum ada. Pastikan mulai game dari scene Bootstrap.");
+            return;
+        }
+
+        inventory = InventoryManager.Instance.inventory;
     }
 }

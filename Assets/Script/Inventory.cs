@@ -20,7 +20,7 @@ public class Inventory
         {
             type = CollectableType.NONE;
             count = 0;
-            maxAllowed = 10;
+            maxAllowed = 99; // 🔥 Ubah default max stack (misal 99)
         }
 
         public bool IsEmpty()
@@ -30,7 +30,8 @@ public class Inventory
 
         public bool CanAddItem(CollectableType itemType)
         {
-            return type == itemType && count < maxAllowed;
+            // Pastikan tipe item sama dan jumlah belum melebihi kapasitas max stack
+            return type == itemType && count < (maxAllowed > 0 ? maxAllowed : 99);
         }
 
         public void AddItem(CollectableType itemType)
@@ -68,7 +69,7 @@ public class Inventory
     // 🔥 TAMBAH ITEM
     public void Add(CollectableType typeToAdd)
     {
-        // 1. Tambah ke slot yang sudah ada (stack)
+        // 1. Tambah ke slot yang sudah ada yang tipenya sama dan belum penuh (stack)
         foreach (Slot slot in slots)
         {
             if (slot.CanAddItem(typeToAdd))
@@ -79,7 +80,7 @@ public class Inventory
             }
         }
 
-        // 2. Tambah ke slot kosong
+        // 2. Jika tidak ada slot bertipe sama yang bisa di-stack, cari slot kosong
         foreach (Slot slot in slots)
         {
             if (slot.IsEmpty())
@@ -108,7 +109,7 @@ public class Inventory
         onInventoryChanged?.Invoke(); // 🔥 trigger UI update
     }
 
-    // 🔥 REMOVE ITEM (buat next upgrade)
+    // 🔥 REMOVE ITEM
     public void Remove(CollectableType typeToRemove)
     {
         foreach (Slot slot in slots)
@@ -129,5 +130,17 @@ public class Inventory
         slots[index].RemoveItem();
 
         onInventoryChanged?.Invoke(); // 🔥 update UI
+    }
+
+    public bool Contains(CollectableType itemType)
+    {
+        foreach (var slot in slots)
+        {
+            if (slot.type == itemType && slot.count > 0)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }

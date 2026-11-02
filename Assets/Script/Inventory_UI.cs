@@ -4,33 +4,62 @@ using UnityEngine;
 public class Inventory_UI : MonoBehaviour
 {
     public GameObject inventoryPanel;
-    public Player player;
     public List<Slot_UI> slots = new List<Slot_UI>();
 
-    // 🔥 (opsional, kalau masih dipakai)
     public ExperimentSystem experimentSystem;
 
-    // ICON
+    [Header("Item Icons")]
     public Sprite woodIcon;
     public Sprite acidWaterIcon;
     public Sprite limestonePowderIcon;
     public Sprite neutralWaterIcon;
     public Sprite limestoneIcon;
+    public Sprite soilSampleIcon;
+    public Sprite soilSuspensionIcon;
+    public Sprite limedSoilSuspensionIcon; // 🔥 1. Variabel Icon Baru
+    public Sprite wateringCanIcon;
 
+    [Header("UI Settings")]
     public bool isMainInventory = false;
+
+    private Inventory inventory;
+
+    private void OnEnable()
+    {
+        HubungkanKeInventoryManager();
+    }
+
+    private void OnDisable()
+    {
+        if (inventory != null)
+        {
+            inventory.onInventoryChanged -= Setup;
+        }
+    }
 
     void Start()
     {
-        inventoryPanel.SetActive(false);
-
-        // 🔥 AUTO UPDATE UI SAAT DATA BERUBAH
-        if (player != null && player.inventory != null)
+        if (inventoryPanel != null && isMainInventory)
         {
-            player.inventory.onInventoryChanged += Setup;
+            inventoryPanel.SetActive(false);
         }
-        else
+
+        HubungkanKeInventoryManager();
+    }
+
+    private void HubungkanKeInventoryManager()
+    {
+        if (InventoryManager.Instance != null && InventoryManager.Instance.inventory != null)
         {
-            Debug.LogError("Player atau Inventory belum di-assign!");
+            if (inventory != null)
+            {
+                inventory.onInventoryChanged -= Setup;
+            }
+
+            inventory = InventoryManager.Instance.inventory;
+            inventory.onInventoryChanged += Setup;
+
+            Setup();
         }
     }
 
@@ -41,7 +70,7 @@ public class Inventory_UI : MonoBehaviour
             ToggleInventory();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && inventoryPanel.activeSelf)
+        if (Input.GetKeyDown(KeyCode.Escape) && inventoryPanel != null && inventoryPanel.activeSelf)
         {
             inventoryPanel.SetActive(false);
         }
@@ -49,28 +78,33 @@ public class Inventory_UI : MonoBehaviour
 
     public void ToggleInventory()
     {
-        if (!inventoryPanel.activeSelf)
+        if (inventoryPanel == null) return;
+
+        bool statusSekarang = inventoryPanel.activeSelf;
+        inventoryPanel.SetActive(!statusSekarang);
+
+        if (!statusSekarang)
         {
-            inventoryPanel.SetActive(true);
             Setup();
-        }
-        else
-        {
-            inventoryPanel.SetActive(false);
         }
     }
 
     public void Setup()
     {
+        if (inventory == null)
+        {
+            HubungkanKeInventoryManager();
+            if (inventory == null) return;
+        }
+
         for (int i = 0; i < slots.Count; i++)
         {
-            // 🔥 PASTIKAN SLOT TAHU INDEX & REFERENSI
             slots[i].slotIndex = i;
             slots[i].inventoryUI = this;
 
-            if (i < player.inventory.slots.Count)
+            if (i < inventory.slots.Count)
             {
-                var slot = player.inventory.slots[i];
+                var slot = inventory.slots[i];
 
                 if (slot.type != CollectableType.NONE)
                 {
@@ -91,15 +125,29 @@ public class Inventory_UI : MonoBehaviour
 
     Sprite GetIcon(CollectableType type)
     {
+        Sprite result = null;
+
         switch (type)
         {
-            case CollectableType.WOOD: return woodIcon;
-            case CollectableType.ACID_WATER: return acidWaterIcon;
-            case CollectableType.LIMESTONEPOWDER: return limestonePowderIcon;
-            case CollectableType.NEUTRAL_WATER: return neutralWaterIcon;
-            case CollectableType.LIMESTONE: return limestoneIcon;
+            case CollectableType.WOOD: result = woodIcon; break;
+            case CollectableType.ACID_WATER: result = acidWaterIcon; break;
+            case CollectableType.LIMESTONEPOWDER: result = limestonePowderIcon; break;
+            case CollectableType.NEUTRAL_WATER: result = neutralWaterIcon; break;
+            case CollectableType.LIMESTONE: result = limestoneIcon; break;
+            case CollectableType.SOIL_SAMPLE: result = soilSampleIcon; break;
+            case CollectableType.SOIL_SUSPENSION: result = soilSuspensionIcon; break;
+            case CollectableType.LIMED_SOIL_SUSPENSION: result = limedSoilSuspensionIcon; break;
+            case CollectableType.WATERING_CAN: result = wateringCanIcon; break; 
+            default:
+                Debug.LogWarning("GetIcon: Tipe Item " + type + " BELUM DIDAFTARKAN di Switch-Case!");
+                return null;
         }
 
-        return null;
+        if (result == null)
+        {
+            Debug.LogWarning("GetIcon: Tipe Item " + type + " DITEMUKAN, tetapi Slot Sprite-nya di Inspector MASIH KOSONG (NONE)!");
+        }
+
+        return result;
     }
 }

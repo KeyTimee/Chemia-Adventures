@@ -2,63 +2,149 @@ using UnityEngine;
 
 public class ExperimentTable : MonoBehaviour
 {
+    [Header("UI References (Tarik dari Inspector)")]
     public GameObject experimentUI;
-    public Inventory_UI inventoryUI;
+    public Inventory_UI experimentInventoryUI;
     public GameObject interactText;
 
     private bool playerInRange = false;
 
-    void Update()
+    void Start()
     {
-        // 🔥 BUKA UI (tekan E)
-        if (playerInRange && !experimentUI.activeSelf && Input.GetKeyDown(KeyCode.E))
+        // 1. Cari ExperimentUI jika belum di-drag di Inspector
+        if (experimentUI == null)
         {
-            experimentUI.SetActive(true);
-            inventoryUI.inventoryPanel.SetActive(true);
-            inventoryUI.Setup();
-
-            interactText.SetActive(false);
+            Transform[] allTransforms = Resources.FindObjectsOfTypeAll<Transform>();
+            foreach (Transform t in allTransforms)
+            {
+                if (t.name == "Experiment" && t.gameObject.scene.name == gameObject.scene.name)
+                {
+                    experimentUI = t.gameObject;
+                    break;
+                }
+            }
         }
 
-        // 🔥 TUTUP UI (tekan ESC)
-        if (experimentUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        // 2. Cari Inventory_UI di Left_Inventory
+        if (experimentInventoryUI == null && experimentUI != null)
         {
-            experimentUI.SetActive(false);
-            inventoryUI.inventoryPanel.SetActive(false);
+            experimentInventoryUI = experimentUI.GetComponentInChildren<Inventory_UI>(true);
+        }
 
-            // kalau masih di dekat meja → munculin lagi text
-            if (playerInRange)
+        // 3. Cari InteractText di Scene
+        if (interactText == null)
+        {
+            GameObject foundText = GameObject.FindWithTag("InteractText");
+            if (foundText == null) foundText = GameObject.Find("InteractText");
+            if (foundText != null) interactText = foundText;
+        }
+
+        // Sembunyikan UI saat awal
+        if (experimentUI != null) experimentUI.SetActive(false);
+        if (interactText != null) interactText.SetActive(false);
+    }
+
+    void Update()
+    {
+        // Pilihan Buka UI dengan Tombol 'E'
+        if (playerInRange && Input.GetKeyDown(KeyCode.E))
+        {
+            if (experimentUI != null)
             {
-                interactText.SetActive(true);
+                // Jika UI sedang tidak aktif, Buka UI
+                if (!experimentUI.activeSelf)
+                {
+                    BukaUI();
+                }
             }
+            else
+            {
+                Debug.LogError("Gagal Membuka: Variable 'experimentUI' masih NULL! Tarik GameObject Experiment ke Inspector.");
+            }
+        }
+
+        // Tutup UI dengan Tombol 'Escape'
+        if (experimentUI != null && experimentUI.activeSelf && Input.GetKeyDown(KeyCode.Escape))
+        {
+            TutupUI();
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    public void BukaUI()
+    {
+        Debug.Log("Membuka UI Experiment...");
+
+        if (experimentUI != null)
+        {
+            experimentUI.SetActive(true);
+        }
+
+        if (experimentInventoryUI != null)
+        {
+            if (experimentInventoryUI.inventoryPanel != null)
+            {
+                experimentInventoryUI.inventoryPanel.SetActive(true);
+            }
+
+            // Memperbarui slot inventory sebelah kiri
+            experimentInventoryUI.Setup();
+        }
+
+        if (interactText != null)
+        {
+            interactText.SetActive(false);
+        }
+    }
+
+    public void TutupUI()
+    {
+        Debug.Log("Menutup UI Experiment...");
+
+        if (experimentUI != null)
+        {
+            experimentUI.SetActive(false);
+        }
+
+        if (experimentInventoryUI != null && experimentInventoryUI.inventoryPanel != null)
+        {
+            experimentInventoryUI.inventoryPanel.SetActive(false);
+        }
+
+        if (playerInRange && interactText != null)
+        {
+            interactText.SetActive(true);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
+            Debug.Log("Pemain BERHASIL masuk area interaksi meja!");
 
-            if (!experimentUI.activeSelf)
+            if (interactText != null && (experimentUI == null || !experimentUI.activeSelf))
             {
                 interactText.SetActive(true);
             }
         }
     }
 
-    void OnTriggerExit2D(Collider2D other)
+    public void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
             playerInRange = false;
-            interactText.SetActive(false);
-        }
-    }
 
-    void Start()
-    {
-        experimentUI.SetActive(false);
-        interactText.SetActive(false);
+            if (interactText != null)
+            {
+                interactText.SetActive(false);
+            }
+
+            if (experimentUI != null && experimentUI.activeSelf)
+            {
+                TutupUI();
+            }
+        }
     }
 }

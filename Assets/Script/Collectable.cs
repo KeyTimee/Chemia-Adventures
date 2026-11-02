@@ -10,7 +10,7 @@ public class Collectable : MonoBehaviour
 
         if (player)
         {
-            player.inventory.Add(type);
+            InventoryManager.Instance.inventory.Add(type);
             Destroy(this.gameObject);
         }
     }
@@ -23,5 +23,9 @@ public enum CollectableType
     ACID_WATER,
     LIMESTONEPOWDER,
     NEUTRAL_WATER,
-    LIMESTONE
+    LIMESTONE,
+    SOIL_SUSPENSION,
+    SOIL_SAMPLE,
+    LIMED_SOIL_SUSPENSION,
+    WATERING_CAN
 }

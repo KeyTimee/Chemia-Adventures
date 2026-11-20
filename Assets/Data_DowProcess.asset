@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ead41a2b9e86045bda2761414cbb71, type: 3}
+  m_Name: Data_DowProcess
+  m_EditorClassIdentifier: Assembly-CSharp::ResearchData
+  processID: dow_process
+  processTitle: PROSES DOW
+  reactionEquation: "MgCl<sub>2</sub> + Ca(OH)<sub>2</sub> -> Mg(OH)<sub>2</sub>
+    + CaCl<sub>2</sub>\t"
+  description: Ekstraksi Magnesium dari air laut dengan mereaksikan Magnesium Klorida
+    (MgCl<sub>2</sub>) dan Kalsium Hidroksida (Ca(OH)<sub>2</sub>) untuk mengendapkan
+    Magnesium Hidroksida (Mg(OH)<sub>2</sub>) sebagai agen penetral asam yang aman
+    bagi ekosistem.
+  diagramSprite: {fileID: -5676825752472554809, guid: ccbadae4200fb2b4796972e6575c76b8, type: 3}
+  researchCost: 1000
+  ingredients:
+  - itemType: 5
+    icon: {fileID: -1041302067160312751, guid: 27391d037d95a944c8a1fdb087278b9c, type: 3}
+    amountPerCraft: 2
+  - itemType: 10
+    icon: {fileID: -816019780121321861, guid: af3da7e4b41008c44b0fc84be0d58b76, type: 3}
+    amountPerCraft: 1
+  quarkCostPerCraft: 0
+  quarkIcon: {fileID: 0}
+  outputItemType: 13
+  outputItemName: 

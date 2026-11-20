@@ -27,5 +27,9 @@ public enum CollectableType
     SOIL_SUSPENSION,
     SOIL_SAMPLE,
     LIMED_SOIL_SUSPENSION,
-    WATERING_CAN
+    WATERING_CAN,
+    SEAWATER,          // Larutan Garam (Bahan Klor-Alkali)         // Magnesium Klorida / Air Laut (Bahan Proses Dow)         // Kalsium Hidroksida / Kapur (Bahan Proses Dow)
+    NAOH,           // Natrium Hidroksida (Hasil Klor-Alkali)
+    H2SO4,          // Asam Sulfat (Hasil Proses Kontak)
+    MGOH2
 }

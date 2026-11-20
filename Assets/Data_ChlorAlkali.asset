@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ead41a2b9e86045bda2761414cbb71, type: 3}
+  m_Name: Data_ChlorAlkali
+  m_EditorClassIdentifier: Assembly-CSharp::ResearchData
+  processID: chlor_alkali
+  processTitle: PROSES KLOR-ALKALI
+  reactionEquation: 2NaCl + 2H<sub>2</sub>O -> 2NaOH + Cl<sub>2</sub> + H<sub>2</sub>
+  description: Elektrolisis larutan garam pekat (brine) menggunakan arus listrik
+    untuk menghasilkan Natrium Hidroksida (NaOH), gas Klorin (Cl<sub>2</sub>), dan
+    Hidrogen (H<sub>2</sub>). NaOH berfungsi sebagai basa kuat untuk menetralkan
+    pencemaran tanah yang bersifat asam.
+  diagramSprite: {fileID: -8217680329576968617, guid: f485de126e65d3043bd2338fad8b76f2, type: 3}
+  researchCost: 1000
+  ingredients:
+  - itemType: 10
+    icon: {fileID: -816019780121321861, guid: af3da7e4b41008c44b0fc84be0d58b76, type: 3}
+    amountPerCraft: 2
+  quarkCostPerCraft: 0
+  quarkIcon: {fileID: 0}
+  outputItemType: 11
+  outputItemName: 

@@ -143,4 +143,49 @@ public class Inventory
         }
         return false;
     }
+    public int GetItemCount(CollectableType itemType)
+    {
+        int total = 0;
+        foreach (var slot in slots)
+        {
+            if (slot.type == itemType && slot.count > 0)
+            {
+                total += slot.count;
+            }
+        }
+        return total;
+    }
+
+    // 2. Mengurangi item sebanyak jumlah tertentu (amount)
+    public void RemoveAmount(CollectableType typeToRemove, int amount)
+    {
+        int remaining = amount;
+        for (int i = 0; i < slots.Count; i++)
+        {
+            if (slots[i].type == typeToRemove && slots[i].count > 0)
+            {
+                int take = Mathf.Min(slots[i].count, remaining);
+                slots[i].count -= take;
+                remaining -= take;
+
+                if (slots[i].count <= 0)
+                {
+                    slots[i].type = CollectableType.NONE;
+                    slots[i].count = 0;
+                }
+
+                if (remaining <= 0) break;
+            }
+        }
+        onInventoryChanged?.Invoke(); // 🔥 Update UI Inventory otomatis
+    }
+
+    // 3. Menambah item sebanyak jumlah tertentu (amount)
+    public void AddAmount(CollectableType typeToAdd, int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            Add(typeToAdd);
+        }
+    }
 }

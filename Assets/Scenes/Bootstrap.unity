@@ -300,7 +300,6 @@ GameObject:
   - component: {fileID: 100658332}
   - component: {fileID: 100658334}
   - component: {fileID: 100658333}
-  - component: {fileID: 100658335}
   m_Layer: 5
   m_Name: PlayerUI
   m_TagString: Untagged
@@ -368,19 +367,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100658331}
   m_CullTransparentMesh: 1
---- !u!114 &100658335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100658331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2cd4ad9bdd96cb42a7e5e975c471bd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CurrencyUI
-  quarkText: {fileID: 692065673}
 --- !u!1001 &113517855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -947,7 +933,11 @@ MonoBehaviour:
   soilSampleIcon: {fileID: -8830966395961832990, guid: 2d07adca45518934e8b191febb21bf28, type: 3}
   soilSuspensionIcon: {fileID: 3545602674507756882, guid: c6a632e8e06de1e4cb35712e8b7eead3, type: 3}
   limedSoilSuspensionIcon: {fileID: -4938450907763642299, guid: b88adc84c2c7d104f8cea9619fcf403f, type: 3}
-  wateringCanIcon: {fileID: 0}
+  wateringCanIcon: {fileID: 4250081291116011537, guid: 443148b8fca072642bbcfa5fd23a034b, type: 3}
+  seawaterIcon: {fileID: -816019780121321861, guid: af3da7e4b41008c44b0fc84be0d58b76, type: 3}
+  naohIcon: {fileID: -318911390704657791, guid: a0da598c88565064ea1bfb698b59ed1e, type: 3}
+  h2so4Icon: {fileID: 9221360293957047299, guid: a0da598c88565064ea1bfb698b59ed1e, type: 3}
+  mgoh2Icon: {fileID: 7650080441530651901, guid: a0da598c88565064ea1bfb698b59ed1e, type: 3}
   isMainInventory: 1
 --- !u!1 &351812878 stripped
 GameObject:
@@ -1454,6 +1444,7 @@ GameObject:
   - component: {fileID: 692065672}
   - component: {fileID: 692065674}
   - component: {fileID: 692065673}
+  - component: {fileID: 692065675}
   m_Layer: 5
   m_Name: Currency
   m_TagString: Untagged
@@ -1500,7 +1491,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb65c8e1a93126f449c6dda9c677d0ac, type: 2}
   m_sharedMaterial: {fileID: 2002486501203619691, guid: fb65c8e1a93126f449c6dda9c677d0ac, type: 2}
@@ -1580,6 +1571,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 692065671}
   m_CullTransparentMesh: 1
+--- !u!114 &692065675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692065671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2cd4ad9bdd96cb42a7e5e975c471bd7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CurrencyUI
+  quarkText: {fileID: 692065673}
 --- !u!1 &702275766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9044586560974790621, guid: 3086c7b617bbb5b4e920993f0a562233, type: 3}
@@ -4210,7 +4214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce1e7aa85094dbe4c9fb450f7b201c0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CurrencyManager
-  quarkAmount: 0
+  quarkAmount: 10000
 --- !u!1 &1653989930 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9044586560974790621, guid: 3086c7b617bbb5b4e920993f0a562233, type: 3}

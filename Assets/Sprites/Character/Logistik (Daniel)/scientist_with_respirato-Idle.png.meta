@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 3eb54f95a920ffb419bcc11a61afea0a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 200867365694948162
+    second: scientist_with_respirato-Idle_0
+  - first:
+      213: 2588157479024237809
+    second: scientist_with_respirato-Idle_1
+  - first:
+      213: -8844894481579215318
+    second: scientist_with_respirato-Idle_2
+  - first:
+      213: 4760487303866055907
+    second: scientist_with_respirato-Idle_3
+  - first:
+      213: 573961926530389150
+    second: scientist_with_respirato-Idle_4
+  - first:
+      213: 7646099777716109358
+    second: scientist_with_respirato-Idle_5
+  - first:
+      213: -1307023135211341280
+    second: scientist_with_respirato-Idle_6
+  - first:
+      213: -8793899213809636181
+    second: scientist_with_respirato-Idle_7
+  - first:
+      213: 8310933121902960085
+    second: scientist_with_respirato-Idle_8
+  - first:
+      213: 1432522089916810544
+    second: scientist_with_respirato-Idle_9
+  - first:
+      213: 1267339462828987118
+    second: scientist_with_respirato-Idle_10
+  - first:
+      213: -9004288756793630040
+    second: scientist_with_respirato-Idle_11
+  - first:
+      213: -8805051823062884494
+    second: scientist_with_respirato-Idle_12
+  - first:
+      213: -8165859903050650284
+    second: scientist_with_respirato-Idle_13
+  - first:
+      213: -3348755301992797940
+    second: scientist_with_respirato-Idle_14
+  - first:
+      213: 2119504684739380192
+    second: scientist_with_respirato-Idle_15
+  - first:
+      213: 6902271500402793257
+    second: scientist_with_respirato-Idle_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 96
+        width: 39
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243473b0ecf99c200800000000000000
+      internalID: 200867365694948162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 95
+        width: 34
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fc9208b38bfae320800000000000000
+      internalID: 2588157479024237809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 96
+        width: 31
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2678adc45f904580800000000000000
+      internalID: -8844894481579215318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 96
+        width: 34
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ec71b01bf5a01240800000000000000
+      internalID: 4760487303866055907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 97
+        width: 36
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e945179c45f17f700800000000000000
+      internalID: 573961926530389150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 96
+        width: 33
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2046ffac376c1a60800000000000000
+      internalID: 7646099777716109358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 95
+        width: 32
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ab28822658cdde0800000000000000
+      internalID: -1307023135211341280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 95
+        width: 35
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bac2a42d14bc5f580800000000000000
+      internalID: -8793899213809636181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 12
+        width: 39
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dddd0324ad565370800000000000000
+      internalID: 8310933121902960085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 12
+        width: 41
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 035446e304751e310800000000000000
+      internalID: 1432522089916810544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 12
+        width: 39
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee291cbd68e769110800000000000000
+      internalID: 1267339462828987118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 12
+        width: 37
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a2a54c15175a0380800000000000000
+      internalID: -9004288756793630040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 12
+        width: 35
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27f5e61a40c2ec580800000000000000
+      internalID: -8805051823062884494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 12
+        width: 35
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45d6f09cea90dae80800000000000000
+      internalID: -8165859903050650284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_14
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 12
+        width: 35
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0963099bc4d681d0800000000000000
+      internalID: -3348755301992797940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_15
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 12
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3caa9f74ef96d10800000000000000
+      internalID: 2119504684739380192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: scientist_with_respirato-Idle_16
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 12
+        width: 35
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92b9fcc1c5bc9cf50800000000000000
+      internalID: 6902271500402793257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      scientist_with_respirato-Idle_0: 200867365694948162
+      scientist_with_respirato-Idle_1: 2588157479024237809
+      scientist_with_respirato-Idle_10: 1267339462828987118
+      scientist_with_respirato-Idle_11: -9004288756793630040
+      scientist_with_respirato-Idle_12: -8805051823062884494
+      scientist_with_respirato-Idle_13: -8165859903050650284
+      scientist_with_respirato-Idle_14: -3348755301992797940
+      scientist_with_respirato-Idle_15: 2119504684739380192
+      scientist_with_respirato-Idle_16: 6902271500402793257
+      scientist_with_respirato-Idle_2: -8844894481579215318
+      scientist_with_respirato-Idle_3: 4760487303866055907
+      scientist_with_respirato-Idle_4: 573961926530389150
+      scientist_with_respirato-Idle_5: 7646099777716109358
+      scientist_with_respirato-Idle_6: -1307023135211341280
+      scientist_with_respirato-Idle_7: -8793899213809636181
+      scientist_with_respirato-Idle_8: 8310933121902960085
+      scientist_with_respirato-Idle_9: 1432522089916810544
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

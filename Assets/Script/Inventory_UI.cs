@@ -19,6 +19,12 @@ public class Inventory_UI : MonoBehaviour
     public Sprite limedSoilSuspensionIcon; // 🔥 1. Variabel Icon Baru
     public Sprite wateringCanIcon;
 
+    [Header("Industrial S.T.E Icons")]
+    public Sprite seawaterIcon;
+    public Sprite naohIcon;
+    public Sprite h2so4Icon;
+    public Sprite mgoh2Icon;
+
     [Header("UI Settings")]
     public bool isMainInventory = false;
 
@@ -138,6 +144,10 @@ public class Inventory_UI : MonoBehaviour
             case CollectableType.SOIL_SUSPENSION: result = soilSuspensionIcon; break;
             case CollectableType.LIMED_SOIL_SUSPENSION: result = limedSoilSuspensionIcon; break;
             case CollectableType.WATERING_CAN: result = wateringCanIcon; break; 
+            case CollectableType.SEAWATER: result = seawaterIcon; break;
+            case CollectableType.NAOH: result = naohIcon; break;
+            case CollectableType.H2SO4: result = h2so4Icon; break;
+            case CollectableType.MGOH2: result = mgoh2Icon; break;
             default:
                 Debug.LogWarning("GetIcon: Tipe Item " + type + " BELUM DIDAFTARKAN di Switch-Case!");
                 return null;

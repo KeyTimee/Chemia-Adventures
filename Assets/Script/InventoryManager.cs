@@ -7,7 +7,7 @@ public class InventoryManager : MonoBehaviour
     public Inventory inventory;
 
     [Header("Inventory Settings")]
-    public int inventorySize = 21;
+    public int inventorySize = 24;
 
     private void Awake()
     {

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d23c17f74e5b4abf18cfbb866d674, type: 3}
+  m_Name: Dlg_Clara_ReminderSample
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Clara
+    speakerPortrait: {fileID: 7317794693344909607, guid: 9e533e70bb2db22458af0ee19c41e219, type: 3}
+    sentence: Ambil sampel kotoran sapi dari titik sumber amonia di kandang dan diskusikan
+      solusinya dengan John di Base ya!

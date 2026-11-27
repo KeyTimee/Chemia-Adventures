@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: d91a1a23e9ef27c4699c88651f2cb06c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4097639212739606667
+    second: An_elderly_male_villager-Idle_0
+  - first:
+      213: 7804292811200838389
+    second: An_elderly_male_villager-Idle_1
+  - first:
+      213: 8735123841446557268
+    second: An_elderly_male_villager-Idle_2
+  - first:
+      213: 1919857923062492951
+    second: An_elderly_male_villager-Idle_3
+  - first:
+      213: 4160544733558073555
+    second: An_elderly_male_villager-Idle_4
+  - first:
+      213: -600595683955936276
+    second: An_elderly_male_villager-Idle_5
+  - first:
+      213: 1683135665323621234
+    second: An_elderly_male_villager-Idle_6
+  - first:
+      213: -690231902211405093
+    second: An_elderly_male_villager-Idle_7
+  - first:
+      213: -4383440512466024110
+    second: An_elderly_male_villager-Idle_8
+  - first:
+      213: 2589776793568324204
+    second: An_elderly_male_villager-Idle_9
+  - first:
+      213: -1710602669097608358
+    second: An_elderly_male_villager-Idle_10
+  - first:
+      213: -1588638107511539194
+    second: An_elderly_male_villager-Idle_11
+  - first:
+      213: -8129674638232859885
+    second: An_elderly_male_villager-Idle_12
+  - first:
+      213: -3345288712814929066
+    second: An_elderly_male_villager-Idle_13
+  - first:
+      213: -6314272842584536189
+    second: An_elderly_male_villager-Idle_14
+  - first:
+      213: 3559945874907123054
+    second: An_elderly_male_villager-Idle_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 95
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b883e0d572dbdd830800000000000000
+      internalID: 4097639212739606667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 95
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fab2ce76fa6e4c60800000000000000
+      internalID: 7804292811200838389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 95
+        width: 30
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 456b7766ad4693970800000000000000
+      internalID: 8735123841446557268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 96
+        width: 46
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71feb53fb94b4aa10800000000000000
+      internalID: 1919857923062492951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 97
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d8e9d344693db930800000000000000
+      internalID: 4160544733558073555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 96
+        width: 38
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce37c2458614aa7f0800000000000000
+      internalID: -600595683955936276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 95
+        width: 30
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27bb76058f2bb5710800000000000000
+      internalID: 1683135665323621234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 96
+        width: 47
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda0c00fdbdcb66f0800000000000000
+      internalID: -690231902211405093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 11
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25908601414ea23c0800000000000000
+      internalID: -4383440512466024110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 11
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6aa034c54cb0f320800000000000000
+      internalID: 2589776793568324204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 184
+        y: 11
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5b1a948fe7b248e0800000000000000
+      internalID: -1710602669097608358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 11
+        width: 49
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60a3025ee0604f9e0800000000000000
+      internalID: -1588638107511539194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 11
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31bc0a84df79d2f80800000000000000
+      internalID: -8129674638232859885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 11
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65bda89c3a52391d0800000000000000
+      internalID: -3345288712814929066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_14
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 11
+        width: 47
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38b4adadd423f58a0800000000000000
+      internalID: -6314272842584536189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: An_elderly_male_villager-Idle_15
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 11
+        width: 48
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6dc47d69e7776130800000000000000
+      internalID: 3559945874907123054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      An_elderly_male_villager-Idle_0: 4097639212739606667
+      An_elderly_male_villager-Idle_1: 7804292811200838389
+      An_elderly_male_villager-Idle_10: -1710602669097608358
+      An_elderly_male_villager-Idle_11: -1588638107511539194
+      An_elderly_male_villager-Idle_12: -8129674638232859885
+      An_elderly_male_villager-Idle_13: -3345288712814929066
+      An_elderly_male_villager-Idle_14: -6314272842584536189
+      An_elderly_male_villager-Idle_15: 3559945874907123054
+      An_elderly_male_villager-Idle_2: 8735123841446557268
+      An_elderly_male_villager-Idle_3: 1919857923062492951
+      An_elderly_male_villager-Idle_4: 4160544733558073555
+      An_elderly_male_villager-Idle_5: -600595683955936276
+      An_elderly_male_villager-Idle_6: 1683135665323621234
+      An_elderly_male_villager-Idle_7: -690231902211405093
+      An_elderly_male_villager-Idle_8: -4383440512466024110
+      An_elderly_male_villager-Idle_9: 2589776793568324204
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

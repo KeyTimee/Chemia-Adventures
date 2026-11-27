@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d23c17f74e5b4abf18cfbb866d674, type: 3}
+  m_Name: Dlg_Max_ReminderSample
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Max
+    speakerPortrait: {fileID: 21300000, guid: 9601b91ff7cdd494ab692895ec78070f, type: 3}
+    sentence: Ambillah sampel tanah dari petak sebelah kiri yang asam itu dan bawa
+      ke John di markas untuk dicari solusinya ya!

@@ -2,36 +2,46 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class ExperimentSlot_UI : MonoBehaviour, IDropHandler, IPointerEnterHandler
+public class ExperimentSlot_UI : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerClickHandler
 {
     public Image icon;
+    public bool isResultSlot = false; // Centang HANYA pada slot Result!
 
     private CollectableType currentItem;
-
-    // 🔥 TAMBAHAN
     private int sourceIndex = -1;
 
     public ExperimentSystem experimentSystem;
 
+    private void Awake()
+    {
+        Clear();
+    }
+
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("DROP MASUK");
+        // Cegah pemain men-drop item ke slot Result
+        if (isResultSlot) return;
 
-        if (currentItem != CollectableType.NONE) return;
+        Slot_UI draggedSlot = eventData.pointerDrag != null ? eventData.pointerDrag.GetComponent<Slot_UI>() : null;
 
-        Slot_UI draggedSlot = eventData.pointerDrag.GetComponent<Slot_UI>();
-
-        if (draggedSlot != null)
+        if (draggedSlot != null && draggedSlot.GetItemType() != CollectableType.NONE)
         {
             CollectableType type = draggedSlot.GetItemType();
             Sprite sprite = draggedSlot.icon.sprite;
 
-            // 🔥 SIMPAN JUGA INDEX ASAL
             SetItem(sprite, type, draggedSlot.slotIndex);
         }
     }
 
-    // 🔥 UPDATE METHOD
+    // Klik pada slot input untuk mengosongkannya jika salah taruh item
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (!isResultSlot && currentItem != CollectableType.NONE)
+        {
+            Clear();
+        }
+    }
+
     public void SetItem(Sprite sprite, CollectableType type, int index)
     {
         icon.sprite = sprite;
@@ -42,7 +52,7 @@ public class ExperimentSlot_UI : MonoBehaviour, IDropHandler, IPointerEnterHandl
 
     public void SetItem(Sprite sprite, CollectableType type)
     {
-        SetItem(sprite, type, -1); // ✔ BENAR
+        SetItem(sprite, type, -1);
     }
 
     public CollectableType GetItem()
@@ -50,7 +60,6 @@ public class ExperimentSlot_UI : MonoBehaviour, IDropHandler, IPointerEnterHandl
         return currentItem;
     }
 
-    // 🔥 TAMBAHAN
     public int GetSourceIndex()
     {
         return sourceIndex;
@@ -58,14 +67,14 @@ public class ExperimentSlot_UI : MonoBehaviour, IDropHandler, IPointerEnterHandl
 
     public void Clear()
     {
-        icon.sprite = null;
-        icon.enabled = false;
+        if (icon != null)
+        {
+            icon.sprite = null;
+            icon.enabled = false;
+        }
         currentItem = CollectableType.NONE;
         sourceIndex = -1;
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("MOUSE MASUK SLOT");
-    }
+    public void OnPointerEnter(PointerEventData eventData) { }
 }

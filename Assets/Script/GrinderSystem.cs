@@ -16,17 +16,16 @@ public class GrinderSystem : MonoBehaviour
 
     [Header("References")]
     public Player player;
+    public Inventory_UI inventoryUI;
 
     public void ProcessGrind()
     {
-        // 1. Safety Check Slot UI
         if (inputSlot == null || resultSlot == null)
         {
             Debug.LogError("[Grinder] Slot UI belum di-assign di Inspector!");
             return;
         }
 
-        // 2. Ambil Inventory Manager
         Inventory targetInventory = null;
         if (InventoryManager.Instance != null && InventoryManager.Instance.inventory != null)
         {
@@ -43,7 +42,6 @@ public class GrinderSystem : MonoBehaviour
             return;
         }
 
-        // 3. Ambil Item dari Input Slot
         var inputItem = inputSlot.GetItem();
 
         if (inputItem == CollectableType.NONE)
@@ -59,28 +57,29 @@ public class GrinderSystem : MonoBehaviour
             return;
         }
 
-        // 4. Cek Pemrosesan Grinding (LIMESTONE -> LIMESTONEPOWDER)
         if (inputItem == CollectableType.LIMESTONE)
         {
-            // A. Set hasil di Result Slot
             resultSlot.SetItem(limestonePowderIcon, CollectableType.LIMESTONEPOWDER);
-
-            // B. Kurangi 1 Batu Kapur dari Inventory Utama
             targetInventory.RemoveAt(inputIndex);
+            targetInventory.AddAmount(CollectableType.LIMESTONEPOWDER, 3);
 
-            // C. Tambahkan 1 Bubuk Kapur ke Inventory Utama
-            targetInventory.Add(CollectableType.LIMESTONEPOWDER);
-
-            // D. Tampilkan Status Penjelasan
-            ShowStatus("Berhasil menghancurkan Batu Kapur (CaCO3) menjadi Serbuk Kapur halus!");
-
-            // E. Bersihkan Input Slot setelah digrind
+            ShowStatus("Berhasil menghaluskan 1 Bongkah Batu Kapur menjadi 3 takaran Serbuk Kapur (CaCO3)!");
             inputSlot.Clear();
+
+            // Segarkan tampilan Inventory UI sebelah kiri
+            if (inventoryUI != null)
+                inventoryUI.Setup();
         }
         else
         {
             ShowStatus("Alat penumbuk (Grinder) ini hanya bisa memproses Batu Kapur (LIMESTONE)!");
         }
+    }
+
+    public void ClearAllSlots()
+    {
+        if (inputSlot != null) inputSlot.Clear();
+        if (resultSlot != null) resultSlot.Clear();
     }
 
     public void ShowStatus(string message)

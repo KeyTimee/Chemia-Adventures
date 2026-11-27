@@ -15,6 +15,7 @@ public class Slot_UI : MonoBehaviour,
 
     private CanvasGroup canvasGroup;
     private CollectableType itemType;
+    private Transform originalDragParent;
 
     public System.Action<CollectableType> onItemClicked;
 
@@ -65,6 +66,9 @@ public class Slot_UI : MonoBehaviour,
             canvasGroup = gameObject.AddComponent<CanvasGroup>();
         }
 
+        // Pastikan setiap slot baru bersih & transparan di awal
+        Clear();
+
         // 1. Otomatis cari Inventory_UI di Parent
         if (inventoryUI == null)
         {
@@ -77,7 +81,6 @@ public class Slot_UI : MonoBehaviour,
             CariDragIconInScene();
         }
     }
-
     private void CariDragIconInScene()
     {
         // 1. Ambil dari DragIconManager (Paling cepat & akurat)
@@ -103,35 +106,36 @@ public class Slot_UI : MonoBehaviour,
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("1. OnBeginDrag Terpanggil pada Slot Index: " + slotIndex + " | Item Type: " + itemType);
-
         // 🛑 PENGAMAN 1: Cegah drag jika slot KOSONG
-        if (itemType == CollectableType.NONE)
-        {
-            Debug.LogWarning("Drag Dibatalkan: Slot ini KOSONG (NONE)");
-            return;
-        }
+        if (itemType == CollectableType.NONE) return;
 
         // 🛑 PENGAMAN 2: Cegah drag jika Sprite KOSONG
-        if (icon == null || icon.sprite == null)
-        {
-            Debug.LogWarning("Drag Dibatalkan: Gambar Sprite pada slot ini KOSONG/NULL!");
-            return;
-        }
+        if (icon == null || icon.sprite == null) return;
 
-        // 🛑 PENGAMAN 3: Paksa cari ulang DragIcon jika saat Awake sempat NULL (Efek Cross-Scene Base)
+        // 🛑 PENGAMAN 3: Paksa cari ulang DragIcon jika saat Awake sempat NULL
         if (dragIcon == null)
         {
             CariDragIconInScene();
         }
 
+        // 🛑 PENGAMAN 4: Buat DragIcon darurat jika objek di scene sempat terhapus
         if (dragIcon == null)
         {
-            Debug.LogError("Drag Dibatalkan: Variable 'dragIcon' masih NULL! Pastikan DragIconManager terpasang pada GameObject DragIcon.");
-            return;
+            Canvas fallbackCanvas = GetComponentInParent<Canvas>();
+            if (fallbackCanvas != null)
+            {
+                GameObject tempDrag = new GameObject("DragIcon_Auto");
+                tempDrag.transform.SetParent(fallbackCanvas.transform, false);
+                dragIcon = tempDrag.AddComponent<Image>();
+            }
+            else
+            {
+                return;
+            }
         }
 
-        Debug.Log("2. DragIcon Ditemukan: " + dragIcon.gameObject.name + " | Mengaktifkan DragIcon...");
+        // Simpan parent asli (misal di PersistentSystems) sebelum dipindah sementara
+        originalDragParent = dragIcon.transform.parent;
 
         // 🔥 1. Pindahkan DragIcon ke Canvas tempat Slot ini berada agar selalu tampil paling depan
         Canvas currentCanvas = GetComponentInParent<Canvas>();
@@ -180,6 +184,12 @@ public class Slot_UI : MonoBehaviour,
         if (dragIcon != null)
         {
             dragIcon.gameObject.SetActive(false);
+
+            // Kembalikan DragIcon ke parent aslinya (PersistentSystems) agar aman saat pindah scene
+            if (originalDragParent != null)
+            {
+                dragIcon.transform.SetParent(originalDragParent, true);
+            }
         }
 
         if (canvasGroup != null)

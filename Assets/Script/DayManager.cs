@@ -31,11 +31,18 @@ public class DayManager : MonoBehaviour
 
     public void AddDays(int daysToAdd)
     {
+        if (daysToAdd <= 0) return;
+
         currentDay += daysToAdd;
         UpdateUI();
         Debug.Log($"Waktu dilewati sebanyak {daysToAdd} hari. Sekarang Hari ke-{currentDay}");
 
-        // TODO: Memicu fungsi harian lainnya di sini
+        // Reset Daily Quest setiap kali hari bertambah!
+        if (QuestManager.Instance != null)
+        {
+            QuestManager.Instance.ResetDailyQuest();
+            QuestManager.Instance.CheckQuest2UnlockCondition();
+        }
     }
 
     public void UpdateUI()

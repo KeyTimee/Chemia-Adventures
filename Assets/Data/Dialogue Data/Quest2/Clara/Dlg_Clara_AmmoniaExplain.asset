@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d23c17f74e5b4abf18cfbb866d674, type: 3}
+  m_Name: Dlg_Clara_AmmoniaExplain
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Altord
+    speakerPortrait: {fileID: 21300000, guid: b17f78e586f718e48bb375007cdf5730, type: 3}
+    sentence: Jadi dari yang saya cek, 3 titik di dekat tumpukan kotoran basah menunjukkan
+      sifat basa kuat (pH > 9) akibat gas amonia, sedangkan 2 titik di luar kandang
+      normal di pH 7,0!
+  - speakerName: Clara
+    speakerPortrait: {fileID: 7317794693344909607, guid: 9e533e70bb2db22458af0ee19c41e219, type: 3}
+    sentence: Pantas saja baunya tajam! Penguraian urine dan kotoran sapi ternyata
+      melepas gas amonia ke udara.
+  - speakerName: Clara
+    speakerPortrait: {fileID: 7317794693344909607, guid: 9e533e70bb2db22458af0ee19c41e219, type: 3}
+    sentence: Tolong ambil Sampel Kotoran Sapi dari salah satu titik tersebut dan
+      bawa ke John di Base supaya kita tahu cara menetralkannya.

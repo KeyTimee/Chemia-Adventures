@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d23c17f74e5b4abf18cfbb866d674, type: 3}
+  m_Name: Dlg_JohnQ2_DiscussVinegar
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: Hmm, sampel kotoran sapi basah ini memancarkan gas amonia (NH3) yang
+      sangat pekat!
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: Saat dilarutkan dalam air, amonia membentuk ion hidroksida (OH-) sehingga
+      bersifat basa kuat (pH > 9) dan mengiritasi pernapasan ternak.
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: Untuk menetralkan basa tanpa membahayakan sapi, kita membutuhkan asam
+      lemah alami yang aman, yaitu Asam Asetat (CH3COOH) dari cuka!
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: "Coba pergi ke desa di arah Barat. Warga di sana terkenal ahli membuat
+      cuka fermentasi\u2014carilah Biang Cuka Pekat di sana."

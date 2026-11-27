@@ -25,6 +25,14 @@ public class Inventory_UI : MonoBehaviour
     public Sprite h2so4Icon;
     public Sprite mgoh2Icon;
 
+    [Header("Main Quest 2 Icons")]
+    public Sprite gasDetectorIcon;
+    public Sprite manureSampleIcon;
+    public Sprite concentratedVinegarIcon;
+    public Sprite diluteAceticAcidIcon;
+    public Sprite ammoniaExtractIcon;
+    public Sprite ammoniumAcetateIcon;
+
     [Header("UI Settings")]
     public bool isMainInventory = false;
 
@@ -143,11 +151,20 @@ public class Inventory_UI : MonoBehaviour
             case CollectableType.SOIL_SAMPLE: result = soilSampleIcon; break;
             case CollectableType.SOIL_SUSPENSION: result = soilSuspensionIcon; break;
             case CollectableType.LIMED_SOIL_SUSPENSION: result = limedSoilSuspensionIcon; break;
-            case CollectableType.WATERING_CAN: result = wateringCanIcon; break; 
+            case CollectableType.WATERING_CAN: result = wateringCanIcon; break;
             case CollectableType.SEAWATER: result = seawaterIcon; break;
             case CollectableType.NAOH: result = naohIcon; break;
             case CollectableType.H2SO4: result = h2so4Icon; break;
             case CollectableType.MGOH2: result = mgoh2Icon; break;
+
+            // --- Main Quest 2 Icons ---
+            case CollectableType.GAS_DETECTOR: result = gasDetectorIcon; break;
+            case CollectableType.MANURE_SAMPLE: result = manureSampleIcon; break;
+            case CollectableType.CONCENTRATED_VINEGAR: result = concentratedVinegarIcon; break;
+            case CollectableType.DILUTE_ACETIC_ACID: result = diluteAceticAcidIcon; break;
+            case CollectableType.AMMONIA_EXTRACT: result = ammoniaExtractIcon; break;
+            case CollectableType.AMMONIUM_ACETATE: result = ammoniumAcetateIcon; break;
+
             default:
                 Debug.LogWarning("GetIcon: Tipe Item " + type + " BELUM DIDAFTARKAN di Switch-Case!");
                 return null;

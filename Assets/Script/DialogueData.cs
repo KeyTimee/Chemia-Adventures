@@ -1,14 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class DialogueLine
+{
+    public string speakerName;
+    public Sprite speakerPortrait;
+    [TextArea(2, 5)]
+    public string sentence;
+}
+
 [CreateAssetMenu(fileName = "NewDialogue", menuName = "Chemia/Dialogue Data")]
 public class DialogueData : ScriptableObject
 {
-    [Header("Identitas Pembicara (Kosongkan jika Narasi/Objek)")]
-    public string speakerName;
-    public Sprite speakerPortrait;
-
-    [Header("Isi Percakapan")]
-    [TextArea(2, 5)]
-    public List<string> sentences = new List<string>();
+    [Header("Daftar Baris Percakapan (Bisa Berganti Pembicara)")]
+    public List<DialogueLine> lines = new List<DialogueLine>();
 }

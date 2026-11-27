@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 
 public class WateringCanPickup : MonoBehaviour
 {
@@ -65,4 +65,4 @@ public class WateringCanPickup : MonoBehaviour
             if (interactText != null) interactText.SetActive(false);
         }
     }
-}
+}*/

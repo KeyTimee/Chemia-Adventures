@@ -2,12 +2,23 @@ using UnityEngine;
 
 public class SoilInteraction : MonoBehaviour
 {
+    [Header("Pengaturan Lahan")]
+    public string blockID = "Lahan_KiriAtas";
+    public bool isSeverelyAcidic = false; // Centang HANYA pada 2 petak kiri!
+    public int maxSampleInInventory = 2;
+
     [Header("UI Reference")]
     public Interact_UI interactUI;
-    public GameObject locationIcon;   // Penanda target bracket animasi
+    public GameObject locationIcon;
 
-    [Header("Visual Soil Point")]
-    public SpriteRenderer soilSpriteRenderer;
+    [Header("Dialog Tanah")]
+    public DialogueData checkPhDialogue;           // Info pH petak ini
+    public DialogueData allCheckedPromptDialogue;  // Muncul otomatis setelah petak ke-4 dicek -> lapor ke Max
+    public DialogueData sampleCollectedDialogue;   // Sampel terambil -> lapor ke John
+    public DialogueData maxSampleReachedDialogue;  // Jika sampel sudah cukup
+    public DialogueData oneBlockHealedDialogue;    // Petak kiri pertama ditaburi CaCO3
+    public DialogueData allBlocksHealedDialogue;   // Kedua petak kiri ditaburi -> lapor ke Max
+    public DialogueData needLimestoneDialogue;     // Jika stok bubuk CaCO3 kurang
 
     private bool isPlayerInRange = false;
     private Player player;
@@ -19,50 +30,42 @@ public class SoilInteraction : MonoBehaviour
 
     private void Update()
     {
-        UpdateSoilVisibility();
+        bool isActiveTarget = IsTargetActiveNow();
 
-        // 🛑 JIKA QUEST SUDAH SELESAI, JANGAN RESPON TOMBOL 'E' SAMA SEKALI
-        if (QuestManager.Instance != null && QuestManager.Instance.quest1State == MainQuestState.Completed)
-        {
-            if (interactUI != null) interactUI.Hide();
+        if (locationIcon != null)
+            locationIcon.SetActive(isActiveTarget);
+
+        if (!isActiveTarget && interactUI != null)
+            interactUI.Hide();
+
+        if (DialogueManager.Instance != null && DialogueManager.Instance.IsDialogueActive)
             return;
-        }
 
-        if (isPlayerInRange && Input.GetKeyDown(KeyCode.E))
+        if (isPlayerInRange && isActiveTarget && Input.GetKeyDown(KeyCode.E))
         {
             InteractWithSoil();
         }
     }
 
-    private void UpdateSoilVisibility()
+    private bool IsTargetActiveNow()
     {
-        if (QuestManager.Instance == null) return;
+        if (QuestManager.Instance == null) return false;
 
-        MainQuestState state = QuestManager.Instance.quest1State;
+        switch (QuestManager.Instance.quest1State)
+        {
+            case MainQuestState.CheckSoilPh:
+                return !QuestManager.Instance.IsBlockChecked(blockID);
 
-        if (state == MainQuestState.NotStarted)
-        {
-            if (locationIcon != null) locationIcon.SetActive(false);
-        }
-        else if (state == MainQuestState.QuestStarted)
-        {
-            // Quest aktif -> Munculkan icon penanda lokasi sampel tanah
-            if (locationIcon != null) locationIcon.SetActive(true);
-        }
-        else if (state == MainQuestState.SampleCollected)
-        {
-            // Sampel sudah diambil -> Sembunyikan icon sampai eksperimen selesai
-            if (locationIcon != null) locationIcon.SetActive(false);
-        }
-        else if (state == MainQuestState.ExperimentDone)
-        {
-            // Eksperimen selesai -> Munculkan icon penanda lokasi penaburan kapur!
-            if (locationIcon != null) locationIcon.SetActive(true);
-        }
-        else if (state == MainQuestState.Completed)
-        {
-            // Quest selesai -> Matikan icon penanda
-            if (locationIcon != null) locationIcon.SetActive(false);
+            case MainQuestState.CollectSample:
+            case MainQuestState.ReportSampleToJohn:
+                // Tetap aktif di 2 petak kiri agar bisa ambil sampel ulang jika eksperimen gagal
+                return isSeverelyAcidic;
+
+            case MainQuestState.NeutralizeSoil:
+                return isSeverelyAcidic && !QuestManager.Instance.IsBlockNeutralized(blockID);
+
+            default:
+                return false;
         }
     }
 
@@ -72,45 +75,64 @@ public class SoilInteraction : MonoBehaviour
 
         MainQuestState state = QuestManager.Instance.quest1State;
 
-        if (state == MainQuestState.NotStarted)
-        {
-            Debug.Log("Bicara dengan NPC Perkebunan terlebih dahulu!");
-            return;
-        }
-
         switch (state)
         {
-            case MainQuestState.QuestStarted:
-                // 1. AMBIL SAMPEL TANAH
+            case MainQuestState.CheckSoilPh:
+                QuestManager.Instance.RegisterCheckedBlock(blockID);
+
+                if (DialogueManager.Instance != null && checkPhDialogue != null)
+                {
+                    DialogueManager.Instance.StartDialogue(checkPhDialogue, () =>
+                    {
+                        if (QuestManager.Instance.quest1State == MainQuestState.ReportPhToMax &&
+                            allCheckedPromptDialogue != null)
+                        {
+                            DialogueManager.Instance.StartDialogue(allCheckedPromptDialogue);
+                        }
+                    });
+                }
+                break;
+
+            case MainQuestState.CollectSample:
+            case MainQuestState.ReportSampleToJohn:
+                if (!isSeverelyAcidic) return;
+
+                if (player.inventory.GetItemCount(CollectableType.SOIL_SAMPLE) >= maxSampleInInventory)
+                {
+                    if (DialogueManager.Instance != null && maxSampleReachedDialogue != null)
+                        DialogueManager.Instance.StartDialogue(maxSampleReachedDialogue);
+                    return;
+                }
+
                 player.inventory.Add(CollectableType.SOIL_SAMPLE);
-                Debug.Log("Berhasil mengambil Sampel Tanah!");
 
-                QuestManager.Instance.AdvanceQuest1(MainQuestState.SampleCollected);
+                if (state == MainQuestState.CollectSample)
+                {
+                    QuestManager.Instance.AdvanceQuest1(MainQuestState.ReportSampleToJohn);
+                }
 
-                if (interactUI != null) interactUI.Hide();
+                if (DialogueManager.Instance != null && sampleCollectedDialogue != null)
+                    DialogueManager.Instance.StartDialogue(sampleCollectedDialogue);
                 break;
 
-            case MainQuestState.SampleCollected:
-                Debug.Log("Tanah: Sampel sudah diambil. Bawa ke Experiment Table untuk diuji!");
-                break;
+            case MainQuestState.NeutralizeSoil:
+                if (!isSeverelyAcidic || QuestManager.Instance.IsBlockNeutralized(blockID)) return;
 
-            case MainQuestState.ExperimentDone:
-                // 2. TABUR KAPUR / CACO3 KEMBALI KE TANAH
                 if (player.inventory.Contains(CollectableType.LIMESTONEPOWDER))
                 {
-                    // Hapus 1 unit LIMESTONEPOWDER dari inventory player
                     player.inventory.Remove(CollectableType.LIMESTONEPOWDER);
+                    QuestManager.Instance.RegisterNeutralizedBlock(blockID);
 
-                    Debug.Log("Berhasil menaburkan Bubuk Kapur (CaCO3) ke tanah perkebunan! Keasaman tanah berhasil dinetralkan.");
+                    bool allDone = (QuestManager.Instance.quest1State == MainQuestState.ReportFinalToMax);
+                    DialogueData dlg = allDone ? allBlocksHealedDialogue : oneBlockHealedDialogue;
 
-                    // Selesaikan Quest 1
-                    QuestManager.Instance.AdvanceQuest1(MainQuestState.Completed);
-
-                    if (interactUI != null) interactUI.Hide();
+                    if (DialogueManager.Instance != null && dlg != null)
+                        DialogueManager.Instance.StartDialogue(dlg);
                 }
                 else
                 {
-                    Debug.Log("Kamu memerlukan Bubuk Kapur (LIMESTONEPOWDER) di inventory untuk menetralkan tanah ini!");
+                    if (DialogueManager.Instance != null && needLimestoneDialogue != null)
+                        DialogueManager.Instance.StartDialogue(needLimestoneDialogue);
                 }
                 break;
         }
@@ -118,23 +140,12 @@ public class SoilInteraction : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (QuestManager.Instance == null) return;
-
-        // 🛑 JIKA QUEST BELUM DIMULAI ATAU SUDAH SELESAI, JANGAN TAMPILKAN UI INTERAKSI
-        if (QuestManager.Instance.quest1State == MainQuestState.NotStarted || 
-            QuestManager.Instance.quest1State == MainQuestState.Completed)
-        {
-            return;
-        }
-
         Player p = collision.GetComponent<Player>();
-
         if (p != null)
         {
             player = p;
             isPlayerInRange = true;
-
-            if (interactUI != null)
+            if (IsTargetActiveNow() && interactUI != null)
                 interactUI.Show("Press E");
         }
     }
@@ -142,14 +153,11 @@ public class SoilInteraction : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Player p = collision.GetComponent<Player>();
-
         if (p != null)
         {
             isPlayerInRange = false;
             player = null;
-
-            if (interactUI != null)
-                interactUI.Hide();
+            if (interactUI != null) interactUI.Hide();
         }
     }
 }

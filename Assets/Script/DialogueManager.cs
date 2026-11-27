@@ -30,13 +30,16 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed = 0.025f;
     public KeyCode advanceKey = KeyCode.E;
 
-    public bool IsDialogueActive => dialoguePanel != null && dialoguePanel.activeSelf;
+    // Mengembalikan true selama dialog aktif ATAU baru saja ditutup (< 0.2 detik lalu)
+    // sehingga tombol 'E' penutup dialog tidak langsung memicu dialog baru!
+    public bool IsDialogueActive => (dialoguePanel != null && dialoguePanel.activeSelf) || (Time.unscaledTime - lastEndTime < 0.2f);
 
-    private Queue<string> sentences = new Queue<string>();
+    private Queue<DialogueLine> linesQueue = new Queue<DialogueLine>();
     private Coroutine typingCoroutine;
-    private string currentSentence = "";
+    private DialogueLine currentLine;
     private bool isTyping = false;
     private Action onDialogueComplete;
+    private float lastEndTime = -10f;
 
     private void Awake()
     {
@@ -56,9 +59,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (!IsDialogueActive) return;
+        // Cek langsung status panel (bukan IsDialogueActive yang ada cooldown-nya)
+        if (dialoguePanel == null || !dialoguePanel.activeSelf) return;
 
-        // Lanjut kalimat dengan tombol E, Spasi, atau Klik Kiri Mouse
         if (Input.GetKeyDown(advanceKey) || Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {
             DisplayNextSentence();
@@ -67,30 +70,14 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(DialogueData data, Action onComplete = null)
     {
-        if (data == null || data.sentences == null || data.sentences.Count == 0) return;
+        if (data == null || data.lines == null || data.lines.Count == 0) return;
 
         onDialogueComplete = onComplete;
+        linesQueue.Clear();
 
-        // 1. Atur Nama Pembicara (sembunyikan banner jika kosong)
-        bool hasName = !string.IsNullOrEmpty(data.speakerName);
-        if (nameBanner != null) nameBanner.SetActive(hasName);
-        if (speakerNameText != null) speakerNameText.text = data.speakerName;
-        if (speakerNameTextShadow != null) speakerNameTextShadow.text = data.speakerName;
-
-        // 2. Atur Portrait Karakter (sembunyikan bingkai jika tidak ada sprite)
-        bool hasPortrait = data.speakerPortrait != null;
-        if (portraitFrame != null) portraitFrame.SetActive(hasPortrait);
-        if (portraitImage != null && hasPortrait)
+        foreach (DialogueLine line in data.lines)
         {
-            portraitImage.sprite = data.speakerPortrait;
-            portraitImage.preserveAspect = true;
-        }
-
-        // 3. Masukkan semua kalimat ke antrean
-        sentences.Clear();
-        foreach (string sentence in data.sentences)
-        {
-            sentences.Enqueue(sentence);
+            linesQueue.Enqueue(line);
         }
 
         if (dialoguePanel != null)
@@ -101,13 +88,12 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        // Jika sedang mengetik, langsung selesaikan kalimat saat ini
         if (isTyping)
         {
             if (typingCoroutine != null)
                 StopCoroutine(typingCoroutine);
 
-            SetDialogueTexts(currentSentence);
+            ShowAllCharacters();
             isTyping = false;
 
             if (nextIndicator != null)
@@ -115,18 +101,32 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // Jika kalimat habis, tutup dialog
-        if (sentences.Count == 0)
+        if (linesQueue.Count == 0)
         {
             EndDialogue();
             return;
         }
 
-        currentSentence = sentences.Dequeue();
+        currentLine = linesQueue.Dequeue();
+
+        // Perbarui Nama & Portrait sesuai pembicara di baris ini
+        bool hasName = !string.IsNullOrEmpty(currentLine.speakerName);
+        if (nameBanner != null) nameBanner.SetActive(hasName);
+        if (speakerNameText != null) speakerNameText.text = currentLine.speakerName;
+        if (speakerNameTextShadow != null) speakerNameTextShadow.text = currentLine.speakerName;
+
+        bool hasPortrait = currentLine.speakerPortrait != null;
+        if (portraitFrame != null) portraitFrame.SetActive(hasPortrait);
+        if (portraitImage != null && hasPortrait)
+        {
+            portraitImage.sprite = currentLine.speakerPortrait;
+            portraitImage.preserveAspect = true;
+        }
+
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
 
-        typingCoroutine = StartCoroutine(TypeSentence(currentSentence));
+        typingCoroutine = StartCoroutine(TypeSentence(currentLine.sentence));
     }
 
     private IEnumerator TypeSentence(string sentence)
@@ -135,12 +135,17 @@ public class DialogueManager : MonoBehaviour
         if (nextIndicator != null)
             nextIndicator.SetActive(false);
 
-        SetDialogueTexts("");
+        SetDialogueTexts(sentence);
+        SetVisibleCharacters(0);
 
-        foreach (char letter in sentence.ToCharArray())
+        // Tunggu 1 frame agar TextMeshPro menghitung jumlah karakter (tanpa tag <sup/sub>)
+        yield return null;
+
+        int totalChars = dialogueText != null ? dialogueText.textInfo.characterCount : sentence.Length;
+
+        for (int i = 1; i <= totalChars; i++)
         {
-            string updated = dialogueText.text + letter;
-            SetDialogueTexts(updated);
+            SetVisibleCharacters(i);
             yield return new WaitForSeconds(typingSpeed);
         }
 
@@ -155,8 +160,23 @@ public class DialogueManager : MonoBehaviour
         if (dialogueTextShadow != null) dialogueTextShadow.text = textValue;
     }
 
+    private void SetVisibleCharacters(int count)
+    {
+        if (dialogueText != null) dialogueText.maxVisibleCharacters = count;
+        if (dialogueTextShadow != null) dialogueTextShadow.maxVisibleCharacters = count;
+    }
+
+    private void ShowAllCharacters()
+    {
+        if (dialogueText != null) dialogueText.maxVisibleCharacters = 99999;
+        if (dialogueTextShadow != null) dialogueTextShadow.maxVisibleCharacters = 99999;
+    }
+
     private void EndDialogue()
     {
+        // Catat waktu penutupan dialog agar NPC tidak langsung re-trigger pada frame yang sama
+        lastEndTime = Time.unscaledTime;
+
         if (dialoguePanel != null)
             dialoguePanel.SetActive(false);
 

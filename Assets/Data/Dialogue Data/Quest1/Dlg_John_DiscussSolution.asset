@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d23c17f74e5b4abf18cfbb866d674, type: 3}
+  m_Name: Dlg_John_DiscussSolution
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: Bagaimana hasil pemeriksaanmu di lahan Max, Altord?
+  - speakerName: Altord
+    speakerPortrait: {fileID: 21300000, guid: b17f78e586f718e48bb375007cdf5730, type: 3}
+    sentence: Kedua petak kirinya mengalami pengasaman parah hingga pH 4,2 akibat
+      penggunaan pupuk Amonium Sulfat yang berlebihan, John. Saya juga sudah membawa
+      sampel tanahnya.
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: 'Analisis yang tepat! Pupuk berbasis amonium memang meninggalkan residu
+      ion asam (H<sup>+</sup>) yang tinggi di tanah. Sekarang, coba pikirkan sebagai
+      seorang ahli kimia: bagaimana cara menurunkan konsentrasi ion asam berlebih
+      di dalam tanah?'
+  - speakerName: Altord
+    speakerPortrait: {fileID: 21300000, guid: b17f78e586f718e48bb375007cdf5730, type: 3}
+    sentence: Kita harus mereaksikannya dengan senyawa basa untuk menetralkan asamnya!
+      Untuk lahan pertanian, senyawa yang paling aman dan umum digunakan adalah Kalsium
+      Karbonat (CaCO<sub>3</sub>) atau batu kapur.
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: Tepat sekali! CaCO<sub>3</sub> akan bereaksi dengan ion H+ membentuk
+      air (H<sub>2</sub>O), karbon dioksida (CO<sub>2</sub>), dan ion kalsium (Ca<sup>2+</sup>)
+      yang menyehatkan tanah.
+  - speakerName: John
+    speakerPortrait: {fileID: 21300000, guid: f3ed164c7e3f036469dfca003564f3ac, type: 3}
+    sentence: Kamu bisa menemukan bongkahan batu kapur alami dengan berjalan ke arah
+      timur dari markas, lalu berbelok ke arah utara. Ambil dan bawa kemari dulu
+      sebelum kita gunakan.

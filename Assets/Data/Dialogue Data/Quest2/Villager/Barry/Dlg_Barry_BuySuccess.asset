@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d23c17f74e5b4abf18cfbb866d674, type: 3}
+  m_Name: Dlg_Barry_BuySuccess
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Barry
+    speakerPortrait: {fileID: -1145369234378963093, guid: 9e533e70bb2db22458af0ee19c41e219, type: 3}
+    sentence: Pas sekali! Aku punya Biang Cuka Pekat (Concentrated Vinegar) dengan
+      kadar asam asetat tinggi.
+  - speakerName: Barry
+    speakerPortrait: {fileID: -1145369234378963093, guid: 9e533e70bb2db22458af0ee19c41e219, type: 3}
+    sentence: Ini satu jeriken untukmu seharga 150 Quark. Hati-hati saat memakainya
+      ya, encerkan dulu dengan air bersih sebelum digunakan di dekat ternak!

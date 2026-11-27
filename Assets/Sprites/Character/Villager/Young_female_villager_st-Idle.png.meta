@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 95ec68ed2c04ed74cb27a235a2f3575f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5168445013490013856
+    second: Young_female_villager_st-Idle_0
+  - first:
+      213: 3445539726771274701
+    second: Young_female_villager_st-Idle_1
+  - first:
+      213: -6304675734710300313
+    second: Young_female_villager_st-Idle_2
+  - first:
+      213: 2364216638829086849
+    second: Young_female_villager_st-Idle_3
+  - first:
+      213: 6964956285591481095
+    second: Young_female_villager_st-Idle_4
+  - first:
+      213: 7125104636569151886
+    second: Young_female_villager_st-Idle_5
+  - first:
+      213: -670940577803752816
+    second: Young_female_villager_st-Idle_6
+  - first:
+      213: -697582649668429377
+    second: Young_female_villager_st-Idle_7
+  - first:
+      213: 6466607616777449341
+    second: Young_female_villager_st-Idle_8
+  - first:
+      213: -516245306161637814
+    second: Young_female_villager_st-Idle_9
+  - first:
+      213: -2011983412530616981
+    second: Young_female_villager_st-Idle_10
+  - first:
+      213: 8309819280471451113
+    second: Young_female_villager_st-Idle_11
+  - first:
+      213: 8692224058394181338
+    second: Young_female_villager_st-Idle_12
+  - first:
+      213: -4370187832768826774
+    second: Young_female_villager_st-Idle_13
+  - first:
+      213: 6557495073642262156
+    second: Young_female_villager_st-Idle_14
+  - first:
+      213: -892355517738512988
+    second: Young_female_villager_st-Idle_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 101
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 069e9c1d4aef548b0800000000000000
+      internalID: -5168445013490013856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 99
+        width: 33
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc3c2b1502401df20800000000000000
+      internalID: 3445539726771274701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_2
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 100
+        width: 23
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7615198a2da4188a0800000000000000
+      internalID: -6304675734710300313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_3
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 101
+        width: 32
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 188c971c1826fc020800000000000000
+      internalID: 2364216638829086849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_4
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 103
+        width: 38
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70bedcef6de78a060800000000000000
+      internalID: 6964956285591481095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_5
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 101
+        width: 31
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e896132aae471e260800000000000000
+      internalID: 7125104636569151886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_6
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 100
+        width: 23
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09aac9a691750b6f0800000000000000
+      internalID: -670940577803752816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_7
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 99
+        width: 34
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb9990da640b156f0800000000000000
+      internalID: -697582649668429377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_8
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 13
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7feadbad510eb950800000000000000
+      internalID: 6466607616777449341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_9
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 13
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a46d54511ade5d8f0800000000000000
+      internalID: -516245306161637814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_10
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 13
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b65622a0fbff314e0800000000000000
+      internalID: -2011983412530616981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_11
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 13
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e56138bb98625370800000000000000
+      internalID: 8309819280471451113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_12
+      rect:
+        serializedVersion: 2
+        x: 378
+        y: 13
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade70bc4abbf0a870800000000000000
+      internalID: 8692224058394181338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_13
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 13
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6274120259f953c0800000000000000
+      internalID: -4370187832768826774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_14
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 13
+        width: 36
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8e22d0c607e00b50800000000000000
+      internalID: 6557495073642262156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Young_female_villager_st-Idle_15
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 13
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ad06df6267bd93f0800000000000000
+      internalID: -892355517738512988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Young_female_villager_st-Idle_0: -5168445013490013856
+      Young_female_villager_st-Idle_1: 3445539726771274701
+      Young_female_villager_st-Idle_10: -2011983412530616981
+      Young_female_villager_st-Idle_11: 8309819280471451113
+      Young_female_villager_st-Idle_12: 8692224058394181338
+      Young_female_villager_st-Idle_13: -4370187832768826774
+      Young_female_villager_st-Idle_14: 6557495073642262156
+      Young_female_villager_st-Idle_15: -892355517738512988
+      Young_female_villager_st-Idle_2: -6304675734710300313
+      Young_female_villager_st-Idle_3: 2364216638829086849
+      Young_female_villager_st-Idle_4: 6964956285591481095
+      Young_female_villager_st-Idle_5: 7125104636569151886
+      Young_female_villager_st-Idle_6: -670940577803752816
+      Young_female_villager_st-Idle_7: -697582649668429377
+      Young_female_villager_st-Idle_8: 6466607616777449341
+      Young_female_villager_st-Idle_9: -516245306161637814
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

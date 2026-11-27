@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 851d23c17f74e5b4abf18cfbb866d674, type: 3}
+  m_Name: Dlg_Barry_NotEnoughQuark
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueData
+  lines:
+  - speakerName: Barry
+    speakerPortrait: {fileID: -1145369234378963093, guid: 9e533e70bb2db22458af0ee19c41e219, type: 3}
+    sentence: Kamu mencari Biang Cuka Pekat untuk menetralkan amonia kandang? Kebetulan
+      aku punya stok asam asetat pekat hasil fermentasi!
+  - speakerName: Barry
+    speakerPortrait: {fileID: -1145369234378963093, guid: 9e533e70bb2db22458af0ee19c41e219, type: 3}
+    sentence: "Harganya 150 Quark per jeriken. Tabungan Quark-mu belum cukup nih\u2014coba
+      bantu pekerjaan harian Paman Max dulu lalu kembali ke sini ya!"

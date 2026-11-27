@@ -13,12 +13,17 @@ public class ExperimentSystem : MonoBehaviour
     public TextMeshProUGUI reactionText;
     public TextMeshProUGUI descriptionText;
 
-    [Header("Icons")]
+    [Header("Icons (Main Quest 1)")]
     public Sprite acidWaterIcon;
     public Sprite limestonePowderIcon;
     public Sprite neutralWaterIcon;
     public Sprite soilSuspensionIcon;
-    public Sprite limedSoilSuspensionIcon; // 🔥 Icon untuk Ekstrak Tanah + Kapur
+    public Sprite limedSoilSuspensionIcon;
+
+    [Header("Icons (Main Quest 2)")]
+    public Sprite diluteAceticAcidIcon;
+    public Sprite ammoniaExtractIcon;
+    public Sprite ammoniumAcetateIcon;
 
     [Header("References (Optional)")]
     public Player player;
@@ -67,19 +72,36 @@ public class ExperimentSystem : MonoBehaviour
             return;
         }
 
-        // TAHAP 1: Sampel Tanah + Air Netral -> Suspensi Tanah
+        // ==========================================
+        // KOMBINASI REAKSI MAIN QUEST 1
+        // ==========================================
         bool isMakingSoilSuspension = (sample == CollectableType.SOIL_SAMPLE && material == CollectableType.NEUTRAL_WATER) ||
                                       (sample == CollectableType.NEUTRAL_WATER && material == CollectableType.SOIL_SAMPLE);
 
-        // TAHAP 2 (QUEST 1): Suspensi Tanah + Serbuk Kapur -> Limed Soil Suspension
         bool isNeutralizingSoil = (sample == CollectableType.SOIL_SUSPENSION && material == CollectableType.LIMESTONEPOWDER) ||
                                   (sample == CollectableType.LIMESTONEPOWDER && material == CollectableType.SOIL_SUSPENSION);
 
-        // REAKSI LAIN: Air Asam + Serbuk Kapur
         bool isAcidAndLimestone = (sample == CollectableType.ACID_WATER && material == CollectableType.LIMESTONEPOWDER) ||
                                   (sample == CollectableType.LIMESTONEPOWDER && material == CollectableType.ACID_WATER);
 
+        // ==========================================
+        // KOMBINASI REAKSI MAIN QUEST 2
+        // ==========================================
+        // 1. Pengenceran Biang Cuka -> 3 unit Asam Asetat Encer (1 untuk uji lab, 2 untuk semprot kandang)
+        bool isDilutingVinegar = (sample == CollectableType.CONCENTRATED_VINEGAR && material == CollectableType.NEUTRAL_WATER) ||
+                                 (sample == CollectableType.NEUTRAL_WATER && material == CollectableType.CONCENTRATED_VINEGAR);
 
+        // 2. Ekstraksi Sampel Kotoran Sapi -> Ekstrak Amonia (NH3 aq)
+        bool isExtractingAmmonia = (sample == CollectableType.MANURE_SAMPLE && material == CollectableType.NEUTRAL_WATER) ||
+                                   (sample == CollectableType.NEUTRAL_WATER && material == CollectableType.MANURE_SAMPLE);
+
+        // 3. Netralisasi Ekstrak Amonia + Asam Asetat Encer -> Amonium Asetat (pH 7.0)
+        bool isNeutralizingAmmonia = (sample == CollectableType.AMMONIA_EXTRACT && material == CollectableType.DILUTE_ACETIC_ACID) ||
+                                     (sample == CollectableType.DILUTE_ACETIC_ACID && material == CollectableType.AMMONIA_EXTRACT);
+
+        // ==========================================
+        // EKSEKUSI HASIL REAKSI
+        // ==========================================
         if (isMakingSoilSuspension)
         {
             resultSlot.SetItem(soilSuspensionIcon, CollectableType.SOIL_SUSPENSION);
@@ -93,24 +115,18 @@ public class ExperimentSystem : MonoBehaviour
         }
         else if (isNeutralizingSoil)
         {
-            // 🔥 A. Set ikon hasil ke Limed Soil Suspension di slot result
             resultSlot.SetItem(limedSoilSuspensionIcon, CollectableType.LIMED_SOIL_SUSPENSION);
-
-            // B. Kurangi bahan penyusun dari Inventory
             KurangiBahan(targetInventory, sampleIndex, materialIndex);
-
-            // 🔥 C. Masukkan item LIMED_SOIL_SUSPENSION ke Inventory
             targetInventory.Add(CollectableType.LIMED_SOIL_SUSPENSION);
 
-            // D. Advansikan status Quest
-            if (QuestManager.Instance != null)
+            if (QuestManager.Instance != null && QuestManager.Instance.quest1State == MainQuestState.GrindAndExperiment)
             {
-                QuestManager.Instance.AdvanceQuest1(MainQuestState.ExperimentDone);
+                QuestManager.Instance.AdvanceQuest1(MainQuestState.GetJohnApproval);
             }
 
             ShowReaction(
-                "CaCO<sub>3</sub> + H<sup>+</sup> (Ekstrak Tanah Asam) → Netralisasi",
-                "Analisis Berhasil! Larutan kapur (CaCO3) berhasil menetralkan keasaman pada ekstrak tanah. Sekarang kamu bisa membawa hasil ini untuk disiramkan/ditaburkan ke tanah perkebunan!"
+                "CaCO<sub>3</sub> + 2H<sup>+</sup> → Ca<sup>2+</sup> + CO<sub>2</sub> + H<sub>2</sub>O",
+                "Analisis Berhasil! Serbuk kapur (CaCO3) berhasil menetralkan keasaman pada ekstrak tanah. Tunjukkan hasil eksperimen ini kepada John untuk mendapatkan persetujuan sebelum diterapkan ke lahan!"
             );
         }
         else if (isAcidAndLimestone)
@@ -124,6 +140,49 @@ public class ExperimentSystem : MonoBehaviour
                 "Kapur (CaCO3) menetralkan air asam dan menghasilkan gas CO2 serta air netral."
             );
         }
+        else if (isDilutingVinegar)
+        {
+            resultSlot.SetItem(diluteAceticAcidIcon, CollectableType.DILUTE_ACETIC_ACID);
+            KurangiBahan(targetInventory, sampleIndex, materialIndex);
+
+            // Menghasilkan 4 botol Asam Asetat Encer (1 untuk uji lab, 3 untuk 3 titik kotoran kandang)
+            targetInventory.Add(CollectableType.DILUTE_ACETIC_ACID);
+            targetInventory.Add(CollectableType.DILUTE_ACETIC_ACID);
+            targetInventory.Add(CollectableType.DILUTE_ACETIC_ACID);
+            targetInventory.Add(CollectableType.DILUTE_ACETIC_ACID);
+
+            ShowReaction(
+                "CH<sub>3</sub>COOH (pekat) + H<sub>2</sub>O → CH<sub>3</sub>COOH (encer)",
+                "Pengenceran Berhasil! Biang cuka pekat telah diencerkan menjadi 3 larutan asam asetat konsentrasi rendah yang aman bagi hewan ternak."
+            );
+        }
+        else if (isExtractingAmmonia)
+        {
+            resultSlot.SetItem(ammoniaExtractIcon, CollectableType.AMMONIA_EXTRACT);
+            KurangiBahan(targetInventory, sampleIndex, materialIndex);
+            targetInventory.Add(CollectableType.AMMONIA_EXTRACT);
+
+            ShowReaction(
+                "NH<sub>3</sub>(g) + H<sub>2</sub>O(l) ⇌ NH<sub>4</sub><sup>+</sup>(aq) + OH<sup>-</sup>(aq)",
+                "Ekstraksi Berhasil! Gas amonia dari sampel kotoran sapi larut dalam air membentuk larutan basa amonia (pH > 9)."
+            );
+        }
+        else if (isNeutralizingAmmonia)
+        {
+            resultSlot.SetItem(ammoniumAcetateIcon, CollectableType.AMMONIUM_ACETATE);
+            KurangiBahan(targetInventory, sampleIndex, materialIndex);
+            targetInventory.Add(CollectableType.AMMONIUM_ACETATE);
+
+            if (QuestManager.Instance != null && QuestManager.Instance.quest2State == MainQuest2State.DiluteAndExperiment)
+            {
+                QuestManager.Instance.AdvanceQuest2(MainQuest2State.GetJohnApproval);
+            }
+
+            ShowReaction(
+                "NH<sub>3</sub> + CH<sub>3</sub>COOH → CH<sub>3</sub>COONH<sub>4</sub>",
+                "Netralisasi Berhasil! Asam asetat encer mengikat amonia basa menjadi garam amonium asetat yang netral (pH 7,0) dan tidak berbau menyengat. Tunjukkan hasil ini kepada John untuk mendapatkan persetujuan!"
+            );
+        }
         else
         {
             resultSlot.Clear();
@@ -132,6 +191,17 @@ public class ExperimentSystem : MonoBehaviour
 
         sampleSlot.Clear();
         materialSlot.Clear();
+
+        // Segarkan tampilan Inventory UI sebelah kiri
+        if (inventoryUI != null)
+            inventoryUI.Setup();
+    }
+
+    public void ClearAllSlots()
+    {
+        if (sampleSlot != null) sampleSlot.Clear();
+        if (materialSlot != null) materialSlot.Clear();
+        if (resultSlot != null) resultSlot.Clear();
     }
 
     private void KurangiBahan(Inventory inv, int indexA, int indexB)

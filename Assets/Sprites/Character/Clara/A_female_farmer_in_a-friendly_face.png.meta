@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: 227995a6ffc88644abda0ef465d37789
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1829710160751827271
+    second: A_female_farmer_in_a-friendly_face_0
+  - first:
+      213: -7726181713445395423
+    second: A_female_farmer_in_a-friendly_face_1
+  - first:
+      213: 825391402083198924
+    second: A_female_farmer_in_a-friendly_face_2
+  - first:
+      213: -4236640035662377438
+    second: A_female_farmer_in_a-friendly_face_3
+  - first:
+      213: 6352352163008021880
+    second: A_female_farmer_in_a-friendly_face_4
+  - first:
+      213: -5172061139164653083
+    second: A_female_farmer_in_a-friendly_face_5
+  - first:
+      213: 2930811963898794488
+    second: A_female_farmer_in_a-friendly_face_6
+  - first:
+      213: 4180433432131525971
+    second: A_female_farmer_in_a-friendly_face_7
+  - first:
+      213: -7996982202187816879
+    second: A_female_farmer_in_a-friendly_face_8
+  - first:
+      213: 948048188880560929
+    second: A_female_farmer_in_a-friendly_face_9
+  - first:
+      213: -5665746357442858647
+    second: A_female_farmer_in_a-friendly_face_10
+  - first:
+      213: 5783414826461496844
+    second: A_female_farmer_in_a-friendly_face_11
+  - first:
+      213: -900240222522429520
+    second: A_female_farmer_in_a-friendly_face_12
+  - first:
+      213: 1406115596500552446
+    second: A_female_farmer_in_a-friendly_face_13
+  - first:
+      213: -1225934571033848326
+    second: A_female_farmer_in_a-friendly_face_14
+  - first:
+      213: 7233942939973675831
+    second: A_female_farmer_in_a-friendly_face_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_0
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 101
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b6e6729d409b96e0800000000000000
+      internalID: -1829710160751827271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_1
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 100
+        width: 34
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 124e7fbaaa617c490800000000000000
+      internalID: -7726181713445395423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_2
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 101
+        width: 34
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc7a4d96b11647b00800000000000000
+      internalID: 825391402083198924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_3
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 102
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22e4521955e6435c0800000000000000
+      internalID: -4236640035662377438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_4
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 103
+        width: 39
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8750744d2a6182850800000000000000
+      internalID: 6352352163008021880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_5
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 102
+        width: 32
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e91d73fbc52938b0800000000000000
+      internalID: -5172061139164653083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_6
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 101
+        width: 34
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f117abf3f55ca820800000000000000
+      internalID: 2930811963898794488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_7
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 100
+        width: 34
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35ddd51ce02e30a30800000000000000
+      internalID: 4180433432131525971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 13
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15069739e03050190800000000000000
+      internalID: -7996982202187816879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_9
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 13
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 123ad280ec4282d00800000000000000
+      internalID: 948048188880560929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_10
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 13
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 961b721d4b93f51b0800000000000000
+      internalID: -5665746357442858647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_11
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 13
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0607ff8421d24050800000000000000
+      internalID: 5783414826461496844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_12
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 13
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bf280c8944b183f0800000000000000
+      internalID: -900240222522429520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_13
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 13
+        width: 38
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efa4d826fa6838310800000000000000
+      internalID: 1406115596500552446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_14
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 13
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af518afb00b9cfee0800000000000000
+      internalID: -1225934571033848326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_female_farmer_in_a-friendly_face_15
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 13
+        width: 40
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b639ed6c0246460800000000000000
+      internalID: 7233942939973675831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      A_female_farmer_in_a-friendly_face_0: -1829710160751827271
+      A_female_farmer_in_a-friendly_face_1: -7726181713445395423
+      A_female_farmer_in_a-friendly_face_10: -5665746357442858647
+      A_female_farmer_in_a-friendly_face_11: 5783414826461496844
+      A_female_farmer_in_a-friendly_face_12: -900240222522429520
+      A_female_farmer_in_a-friendly_face_13: 1406115596500552446
+      A_female_farmer_in_a-friendly_face_14: -1225934571033848326
+      A_female_farmer_in_a-friendly_face_15: 7233942939973675831
+      A_female_farmer_in_a-friendly_face_2: 825391402083198924
+      A_female_farmer_in_a-friendly_face_3: -4236640035662377438
+      A_female_farmer_in_a-friendly_face_4: 6352352163008021880
+      A_female_farmer_in_a-friendly_face_5: -5172061139164653083
+      A_female_farmer_in_a-friendly_face_6: 2930811963898794488
+      A_female_farmer_in_a-friendly_face_7: 4180433432131525971
+      A_female_farmer_in_a-friendly_face_8: -7996982202187816879
+      A_female_farmer_in_a-friendly_face_9: 948048188880560929
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
